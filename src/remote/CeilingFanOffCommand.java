@@ -1,6 +1,6 @@
 package remote;
 
-public class CeilingFanOffCommand {
+public class CeilingFanOffCommand implements Command {
 	
 	CeilingFan ceilingFan;
 
