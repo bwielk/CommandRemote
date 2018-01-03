@@ -4,12 +4,12 @@ public class CeilingFanOnCommand implements Command {
 	
 	CeilingFan ceilingFan;
 	
-	public LivingRoomCeilingFanOnCommand(CeilingFan ceilingFan){
+	public CeilingFanOnCommand(CeilingFan ceilingFan){
 		this.ceilingFan = ceilingFan;
 	}
 	
 	public void execute(){
 		ceilingFan.on();
-		ceilingFan.setSpeed(Speed.MEDIUM);
+		//ceilingFan.setSpeed(Speed.MEDIUM);
 	}
 }
