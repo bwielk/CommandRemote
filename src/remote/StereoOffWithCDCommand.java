@@ -11,4 +11,9 @@ public class StereoOffWithCDCommand implements Command {
 	public void execute(){
 		stereo.off();
 	}
+	
+	public void undo(){
+		StereoOnWithCDCommand stereoOn = new StereoOnWithCDCommand(stereo);
+		stereoOn.execute();
+	}
 }

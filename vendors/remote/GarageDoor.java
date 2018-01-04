@@ -9,11 +9,11 @@ public class GarageDoor {
 	}
 	
 	public String open(){
-		return "open";
+		return name + " is opening";
 	}
 	
 	public String close(){
-		return "closed";
+		return name + " is closing";
 	}
 
 }

@@ -9,10 +9,10 @@ public class CeilingFan {
 	}
 	
 	public String on(){
-		return "on";
+		return name + " is on";
 	}
 	
 	public String off(){
-		return "off";
+		return name + " is off";
 	}
 }

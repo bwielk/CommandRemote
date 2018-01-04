@@ -9,7 +9,7 @@ public class Stereo {
 	}
 	
 	public String on(){
-		return "on";
+		return name + " is on";
 	}
 	
 	public String setVolume(int vol){
@@ -21,6 +21,6 @@ public class Stereo {
 	}
 	
 	public String off(){
-		return "off";
+		return name + " is off";
 	}
 }

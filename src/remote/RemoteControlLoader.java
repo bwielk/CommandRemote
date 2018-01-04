@@ -31,6 +31,7 @@ public class RemoteControlLoader {
 		remoteControl.setCommand(5, stereoOn, stereoOff);
 		
 		System.out.println(remoteControl.toString());
+		
 	}
 	
 }

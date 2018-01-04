@@ -12,4 +12,8 @@ public class CeilingFanOnCommand implements Command {
 		ceilingFan.on();
 		//ceilingFan.setSpeed(Speed.MEDIUM);
 	}
+	
+	public void undo(){
+		ceilingFan.off();
+	}
 }
