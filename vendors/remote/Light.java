@@ -1,6 +1,6 @@
 package remote;
 
-public class Light {
+public class Light extends Device{
 	
 	private String name;
 	
@@ -8,11 +8,13 @@ public class Light {
 		this.name = name;
 	}
 	
-	public String on(){
-		return name + " is on";
+	public void on(){
+		isOn = true;
+		System.out.println(name + " is on");
 	}
 	
-	public String off(){
-		return name + " is off";
+	public void off(){
+		isOn = false;
+		System.out.println(name + " is off");
 	}
 }

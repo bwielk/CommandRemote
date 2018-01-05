@@ -1,26 +1,30 @@
 package remote;
 
-public class Stereo {
+public class Stereo extends Device{
 	
 	private String name;
+	private int volume;
 	
 	public Stereo(String name){
 		this.name = name;
 	}
 	
-	public String on(){
-		return name + " is on";
+	public void on(){
+		isOn = true;
+		System.out.println(name + " is on");
 	}
 	
-	public String setVolume(int vol){
-		return "The volume is " + vol;
+	public void setVolume(int vol){
+		volume = vol;
+		System.out.println("The volume is " + vol);
 	}
 	
-	public String setCD(){
-		return "CD set";
+	public void setCD(){
+		System.out.println("CD is set");
 	}
 	
-	public String off(){
-		return name + " is off";
+	public void off(){
+		isOn = false;
+		System.out.println(name + " is off");
 	}
 }

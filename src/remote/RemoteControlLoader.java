@@ -30,8 +30,9 @@ public class RemoteControlLoader {
 		remoteControl.setCommand(4, garageDoorOpen, garageDoorClose);
 		remoteControl.setCommand(5, stereoOn, stereoOff);
 		
-		System.out.println(remoteControl.toString());
-		
+		remoteControl.onButtonPushed(1);
+		remoteControl.offButtonPushed(1);
+		remoteControl.undoButtonPushed();
 	}
 	
 }
