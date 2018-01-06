@@ -23,16 +23,35 @@ public class RemoteControlLoader {
 		CeilingFanOffCommand livingRoomFanOff = new CeilingFanOffCommand(livingRoomCeilingFan);
 		GarageDoorCloseCommand garageDoorClose = new GarageDoorCloseCommand(garageDoor);
 		StereoOffWithCDCommand stereoOff = new StereoOffWithCDCommand(stereo);
-	
+		
+		CeilingFanHIGHSpeedCommand highSpeedCommand = new CeilingFanHIGHSpeedCommand(livingRoomCeilingFan);
+		CeilingFanMEDIUMSpeedCommand mediumSpeedCommand = new CeilingFanMEDIUMSpeedCommand(livingRoomCeilingFan);
+		CeilingFanLOWSpeedCommand lowSpeedCommand = new CeilingFanLOWSpeedCommand(livingRoomCeilingFan);
+		
+		Command[] onCommands = {livingRoomLightOn, highSpeedCommand, stereoOn};
+		Command[] offCommands = {livingRoomLightOff, livingRoomFanOff, stereoOff};
+		
+		MacroCommand partyOn = new MacroCommand(onCommands);
+		MacroCommand partyOff = new MacroCommand(offCommands);
+		
 		remoteControl.setCommand(1, livingRoomLightOn, livingRoomLightOff);
 		remoteControl.setCommand(2, kitchenLightOn, kitchenLightOff);
 		remoteControl.setCommand(3, livingRoomFanOn, livingRoomFanOff);
 		remoteControl.setCommand(4, garageDoorOpen, garageDoorClose);
 		remoteControl.setCommand(5, stereoOn, stereoOff);
+		remoteControl.setCommand(6, highSpeedCommand, livingRoomFanOff);
+		remoteControl.setCommand(7, mediumSpeedCommand, livingRoomFanOff);
+		remoteControl.setCommand(8, lowSpeedCommand, livingRoomFanOff);
+		remoteControl.setCommand(9, partyOn, partyOff);
 		
-		remoteControl.onButtonPushed(1);
-		remoteControl.offButtonPushed(1);
+		System.out.println(remoteControl.toString());
+		
+		remoteControl.onButtonPushed(6);//The fan speed is HIGH
+		remoteControl.onButtonPushed(7);//The fan speed is MEDIUM
+		remoteControl.undoButtonPushed();//The fan speed is HIGH
+		remoteControl.offButtonPushed(6);//Living Room Ceiling Fan is off
+		remoteControl.undoButtonPushed();//Living Room Ceiling Fan is on
+		remoteControl.onButtonPushed(9);
 		remoteControl.undoButtonPushed();
 	}
-	
 }
